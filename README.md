@@ -10,7 +10,7 @@ To launch this application, you must initialize the database.
 You need to change the login in /app/database/database.php and initialize it
 with /app/database/init.php.
 
-# Development
+## Development
 
 #1 Initialize all JS libraries
 
