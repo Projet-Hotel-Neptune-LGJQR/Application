@@ -6,6 +6,6 @@ Managed by [Laragon](https://laragon.org/).
 
 ## Launch the app
 
-To launch this application, you must initialize the database. 
-You need to change the login in /app/database/database.php and initialize it 
+To launch this application, you must initialize the database.
+You need to change the login in /app/database/database.php and initialize it
 with /app/database/init.php.
