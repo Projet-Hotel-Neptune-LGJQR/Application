@@ -4,18 +4,14 @@ $port = 3306;
 $dbname = 'projethotelneptune';
 $user = 'root';
 $pass = '';
-$charset = 'utf8mb4';
-$db = null;
 
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-try {
-    $db = new mysqli($host, $user, $pass, $dbname, $port);
-    mysqli_set_charset($db, $charset);
-    mysqli_options($db, MYSQLI_OPT_INT_AND_FLOAT_NATIVE, 1);
-} catch (mysqli_sql_exception $e) {
-    throw new mysqli_sql_exception($e->getMessage(), $e->getCode());
+$db = mysqli_connect($host, $user, $pass, $dbname, $port);
+mysqli_set_charset($db, 'utf8mb4');
+
+if (mysqli_connect_errno()) {
+    echo "Impossible de se connecter à MySQL: " . mysqli_connect_error();
+    exit();
 }
-unset($host, $dbname, $user, $pass, $charset, $port);
 
 function isAccExists($email)
 {
