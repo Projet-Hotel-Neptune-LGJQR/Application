@@ -1,0 +1,34 @@
+.bg-color {
+    background-color: #141415;
+}
+
+.bg-grey-custom {
+    background-color: #3D3D3D;
+}
+
+.nav-active {
+    color: white;
+}
+
+.main-background {
+    background-image: url('../img/background.webp');
+    background-size: cover;
+}
+
+.gradient {
+    text-transform: uppercase;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-reverse {
+    text-transform: uppercase;
+    background: linear-gradient(to left, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gold-custom {
+    color: #C7B452;
+}
