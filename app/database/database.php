@@ -25,10 +25,20 @@ function createAcc($name, $email, $password)
 {
     global $db;
 
-    $query = "INSERT INTO users (name, email, password, isAdmin) 
+    $query = "INSERT IGNORE INTO users (name, email, password, isAdmin) 
   			  VALUES('$name', '$email', '$password', false)";
 
     return mysqli_query($db, $query);
+}
+
+function getAccs()
+{
+    global $db;
+
+    $query = "SELECT * FROM users";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
 }
 
 
@@ -72,6 +82,26 @@ function changePassword($email, $pass)
 function deleteAcc($email)
 {
     global $db;
-    $query = "DELETE FROM  users WHERE email='" . $email . "'";
+    $query = "DELETE FROM users WHERE email='" . $email . "'";
     return mysqli_query($db, $query);
+}
+
+function createRooms($name, $star, $rating, $price, $firstImage)
+{
+    global $db;
+
+    $query = "INSERT IGNORE INTO rooms (name, stars, rating, price, firstImage) 
+  			  VALUES('$name', '$star', '$rating', $price, '$firstImage')";
+
+    return mysqli_query($db, $query);
+}
+
+function getRooms()
+{
+    global $db;
+
+    $query = "SELECT * FROM rooms";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
 }

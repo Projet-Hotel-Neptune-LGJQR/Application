@@ -4,7 +4,8 @@ module.exports = {
         "./app/*.php",
         "./app/**/*.php",
         "./app/**/**/*.php",
-        "./app/**/**/**/*.php"
+        "./app/**/**/**/*.php",
+        "./app/**/**/**/**/*.php"
     ],
     theme: {
         extend: {},
