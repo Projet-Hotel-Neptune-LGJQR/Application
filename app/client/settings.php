@@ -42,7 +42,7 @@ if (isset($_POST['last-email']) && isset($_POST['new-email'])) {
 }
 
 if (isset($_POST['delete'])) {
-    deleteAcc($_SESSION['email']);
+    deleteAcc($_SESSION['email'], getAccIdFromEmail($_SESSION['email'])['id']);
     session_destroy();
     unset($_SESSION['email']);
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";

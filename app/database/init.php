@@ -18,8 +18,17 @@ function createRoomsTable()
     mysqli_query($db, $users);
 }
 
+function createReservationTable()
+{
+    $users = "CREATE TABLE IF NOT EXISTS Reservations(id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, idClient INT(6) NOT NULL, idRoom INT(6))";
+    global $db;
+
+    mysqli_query($db, $users);
+}
+
 createUsersTable();
 createRoomsTable();
+createReservationTable();
 
 //createRooms('Chambre double', 5, 216, 235,'http://localhost/assets/img/room/chambre_double.jpg');
 //createRooms('Chambre doduble', 5, 216, 235,'http://localhost/assets/img/room/chambre_double.jpg');

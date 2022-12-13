@@ -15,12 +15,22 @@ if (!isRoomExists(id)) {
     die();
 }
 define('room', getRoom(id));
+
+if (isset($_GET['res'])) {
+    if (!isset($_SESSION['email'])) {
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login.php\">";
+        die();
+    }
+
+    define('resId', $_GET['res']);
+    createReservation(getAccIdFromEmail($_SESSION['email'])['id'], resId);
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index.php\">";
+}
 ?>
 
     <section>
         <section class="py-20">
-            <div class="container mx-auto"
-                 style="background-image: url('assets/img/pattern-white.svg'); background-position: center;">
+            <div class="container mx-auto">
 
                 <section class="px-4 lg:px-20">
 
@@ -51,10 +61,10 @@ define('room', getRoom(id));
                             <h4 class="text-2xl font-bold text-center"><?php echo room['price'] ?> €</h4>
 
                             <div class="flex justify-center">
-                                <button type="button"
-                                        class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
+                                <a href="infoChambre.php?id=<?php echo room['id'] ?>&res=<?php echo room['id'] ?>"
+                                        class="cursor-pointer transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Reserver cette chambre
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
