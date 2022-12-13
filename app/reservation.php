@@ -1,6 +1,11 @@
 <?php
 include('./include/header.php');
 include('./database/database.php');
+
+if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
+    define('trip_start', $_POST['trip-start']);
+    define('trip_end', $_POST['trip-end']);
+}
 ?>
 
     <section class="pt-12">
@@ -10,7 +15,8 @@ include('./database/database.php');
     <section class="pt-12">
         <div class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" style="">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <div class="container flex items-center justify-center md:justify-between">
+                <form class="container flex items-center justify-center md:justify-between"
+                      action="reservation.php" method="post" data-turbo="false">
                     <div class="container flex flex-col md:items-center md:space-x-8 md:flex-row">
                         <div class="flex flex-col">
                             <span class="text-white">Chambre et occupent</span>
@@ -27,29 +33,29 @@ include('./database/database.php');
                             <span class="text-white">Arrivé</span>
                             <label for="start">
                                 <input type="date" id="start" name="trip-start"
-                                       value="2018-07-22"
-                                       min="2018-01-01" max="2018-12-31">
+                                       value="2022-12-13"
+                                       min="2022-12-13" max="2023-12-13">
                             </label>
                         </div>
                         <div class="flex flex-col ">
                             <span class="text-white">Départ</span>
                             <label for="start">
-                                <input type="date" id="start" name="trip-start"
-                                       value="2018-07-22"
-                                       min="2018-01-01" max="2018-12-31">
+                                <input type="date" id="start" name="trip-end"
+                                       value="2022-12-13"
+                                       min="2022-12-13" max="2023-12-13">
                             </label>
                         </div>
                     </div>
                     <div>
                         <div>
-                            <button type="button"
+                            <button type="submit"
                                     class="transform hover:scale-105 motion-reduce:transform-none duration-300 bg-black text-md text-gold-custom duration-200 font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                 Rechercher
                             </button>
                         </div>
 
                     </div>
-                </div>
+                </form>
             </div>
             <div class="pt-8">
                 <div class="container flex items-center justify-center md:justify-between">

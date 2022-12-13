@@ -98,12 +98,13 @@ function deleteAcc($email, $idClient)
     mysqli_query($db, $query2);
 }
 
-function createRooms($name, $star, $rating, $price, $firstImage)
+function createRooms($name, $star, $rating, $price, $firstImage, $description)
 {
     global $db;
+    $safe_desc = mysqli_real_escape_string($db, $description);
 
-    $query = "INSERT IGNORE INTO rooms (name, stars, rating, price, firstImage) 
-  			  VALUES('$name', '$star', '$rating', $price, '$firstImage')";
+    $query = "INSERT IGNORE INTO rooms (name, stars, rating, price, firstImage, description) 
+  			  VALUES('$name', '$star', '$rating', $price, '$firstImage', '" . $safe_desc . "')";
 
     return mysqli_query($db, $query);
 }

@@ -12,7 +12,7 @@ function createUsersTable()
 
 function createRoomsTable()
 {
-    $users = "CREATE TABLE IF NOT EXISTS Rooms (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,name VARCHAR(50) NOT NULL, stars INT(6), rating VARCHAR(50), price VARCHAR(255), firstImage VARCHAR(255))";
+    $users = "CREATE TABLE IF NOT EXISTS Rooms (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,name VARCHAR(50) NOT NULL, stars INT(6), rating VARCHAR(50), price VARCHAR(255), firstImage VARCHAR(255), description TEXT)";
     global $db;
 
     mysqli_query($db, $users);

@@ -15,6 +15,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
     define('room_rating', $_POST['room-rating']);
     define('room_price', $_POST['room-price']);
     define('room_firstimage', $_FILES["room-firstimage"]);
+    define('room_description', $_POST["room-description"]);
 
     $uuid = uniqid();
 
@@ -28,7 +29,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
     $path = "../../assets/img/room/" . $uuid . $fileExtension;
 
     if (move_uploaded_file(room_firstimage['tmp_name'], $path)) {
-        createRooms(room_name, room_star, room_rating, room_price, $path);
+        createRooms(room_name, room_star, room_rating, room_price, $path, room_description);
         echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms.php\">";
     }
 }
@@ -88,6 +89,13 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
                                         class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                                         placeholder="Première image de la chambre"
                                 />
+                            </label>
+                            <label>
+                                <textarea
+                                        name="room-description"
+                                        required
+                                        class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+                                        placeholder="Description de la chambre"></textarea>
                             </label>
                             <button
                                     type="submit"

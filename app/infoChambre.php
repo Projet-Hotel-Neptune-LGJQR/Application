@@ -53,7 +53,7 @@ if (isset($_GET['res'])) {
 
                             <div class="mt-4">
                                 <h4 class="text-2xl font-bold">Description</h4>
-                                <p class="my-4">{{this.offer.description}}</p>
+                                <p class="my-4"><?php echo room['description'] ?></p>
                             </div>
                         </div>
 
