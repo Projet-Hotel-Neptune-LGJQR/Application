@@ -26,10 +26,10 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
     $fileNameCmps = explode(".", room_firstimage['name']);
     $fileExtension = '.' . strtolower(end($fileNameCmps));
 
-    $path = "/assets/img/room/" . $uuid . $fileExtension;
+    $path = "uploads/" . $uuid . $fileExtension;
 
     if (move_uploaded_file(room_firstimage['tmp_name'], $path)) {
-        createRooms(room_name, room_star, room_rating, room_price, $path, room_description);
+        createRooms(room_name, room_star, room_rating, room_price, 'admin/room/' . $path, room_description);
         echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms.php\">";
     }
 }
