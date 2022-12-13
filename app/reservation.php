@@ -78,6 +78,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
                     <?php foreach (getRooms() as $room) : ?>
                         <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
                             <a class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-lg overflow-hidden"
+                               data-turbo-preload
                                href="infoChambre.php?id=<?php echo $room[0] ?>">
                                 <div class="relative pb-48 overflow-hidden">
                                     <img alt="" class="absolute inset-0 h-full w-full object-cover"

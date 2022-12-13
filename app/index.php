@@ -32,7 +32,8 @@
                                 <h1>LES RÉSERVATIONS SONT MODIFIABLES</h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <a href="reservation.php"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
                                 </a>
@@ -48,7 +49,8 @@
                                 </h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <a href="reservation.php"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     En savoir plus
                                 </a>
@@ -66,7 +68,8 @@
                                 <h1>VOTRE SANTÉ, SÉCURITÉ ET BIEN-ÊTRE</h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <a href="reservation.php"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
                                 </a>

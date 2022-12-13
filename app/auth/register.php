@@ -82,7 +82,8 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
                         <div class="flex flex-col items-center mt-5">
                             <p class="mt-1 text-xs font-light text-gray-500">
                                 Vous avez déjà un compte ?
-                                <a class="ml-1 font-medium text-gold-custom" href="auth/login.php">
+                                <a data-turbo-preload
+                                   class="ml-1 font-medium text-gold-custom" href="auth/login.php">
                                     Connectez-vous
                                 </a>
                             </p>
