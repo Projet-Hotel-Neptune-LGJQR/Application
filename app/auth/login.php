@@ -71,7 +71,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                         <div class="flex flex-col items-center mt-5">
                             <p class="mt-1 text-xs font-light text-gray-500">
                                 Vous n'avez pas de compte ?
-                                <a class="ml-1 font-medium text-gold-custom" href="auth/register.php">
+                                <a data-turbo-preload
+                                   class="ml-1 font-medium text-gold-custom" href="auth/register.php">
                                     Inscrivez-vous
                                 </a>
                             </p>

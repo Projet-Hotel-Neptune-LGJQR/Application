@@ -7,7 +7,7 @@
             <div class="container mx-auto px-4">
                 <div class="flex justify-center mb-6">
                     <p class="text-3xl font-bold gradient">
-                        Lorem ipsum durum
+                        Hôtel Neptune
                     </p>
                 </div>
             </div>
@@ -32,10 +32,11 @@
                                 <h1>LES RÉSERVATIONS SONT MODIFIABLES</h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <button type="button"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="transform">
@@ -48,10 +49,11 @@
                                 </h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <button type="button"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     En savoir plus
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="transform">
@@ -66,10 +68,11 @@
                                 <h1>VOTRE SANTÉ, SÉCURITÉ ET BIEN-ÊTRE</h1>
                             </div>
                             <div class="flex justify-center pt-3">
-                                <button type="button"
+                                <a data-turbo-preload
+                                   href="reservation.php"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
-                                </button>
+                                </a>
                             </div>
                         </div>
 
