@@ -1,9 +1,9 @@
 <?php
-$host = '127.0.0.1';
+$host = 'localhost';
 $port = 3306;
 $dbname = 'projethotelneptune';
-$user = 'root';
-$pass = '';
+$user = 'hotelneptune';
+$pass = 'password';
 
 $db = mysqli_connect($host, $user, $pass, $dbname, $port);
 mysqli_set_charset($db, 'utf8mb4');
@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
 function isAccExists($email)
 {
     global $db;
-    $user_check_query = "SELECT * FROM Users WHERE email='$email'";
+    $user_check_query = "SELECT * FROM users WHERE email='$email'";
     $result = mysqli_query($db, $user_check_query);
     return mysqli_fetch_assoc($result);
 }
