@@ -42,7 +42,7 @@ if (isset($_POST['last-email']) && isset($_POST['new-email'])) {
 }
 
 if (isset($_POST['delete'])) {
-    deleteAcc($_SESSION['email']);
+    deleteAcc($_SESSION['email'], getAccIdFromEmail($_SESSION['email'])['id']);
     session_destroy();
     unset($_SESSION['email']);
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
@@ -56,7 +56,7 @@ if (isset($_POST['delete'])) {
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
                 <div>
                     <h1 class="font-bold">Changer de mot de passe</h1>
-                    <form class="flex flex-col mt-4" action="client/settings.php" method="post">
+                    <form class="flex flex-col mt-4" action="client/settings.php" method="post" data-turbo="false">
                         <label>
                             <input
                                     type="password"
@@ -92,7 +92,7 @@ if (isset($_POST['delete'])) {
                 </div>
                 <div>
                     <h1 class="font-bold">Changer d'email</h1>
-                    <form class="flex flex-col mt-4" action="client/settings.php" method="post">
+                    <form class="flex flex-col mt-4" action="client/settings.php" method="post" data-turbo="false">
                         <label>
                             <input
                                     type="email"
@@ -128,7 +128,7 @@ if (isset($_POST['delete'])) {
                 </div>
                 <div>
                     <h1 class="font-bold">Supprimer votre compte</h1>
-                    <form action="client/settings.php" method="post">
+                    <form action="client/settings.php" method="post" data-turbo="false">
                         <button
                                 type="submit"
                                 name="delete"
@@ -145,4 +145,3 @@ if (isset($_POST['delete'])) {
 </section>
 
 <?php include('../include/footer.php'); ?>
-

@@ -25,10 +25,28 @@ function createAcc($name, $email, $password)
 {
     global $db;
 
-    $query = "INSERT INTO users (name, email, password, isAdmin) 
+    $query = "INSERT IGNORE INTO users (name, email, password, isAdmin) 
   			  VALUES('$name', '$email', '$password', false)";
 
     return mysqli_query($db, $query);
+}
+
+function getAccs()
+{
+    global $db;
+
+    $query = "SELECT * FROM users";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
+}
+
+function getAccIdFromEmail($email)
+{
+    global $db;
+    $query = "SELECT id FROM users WHERE email='$email'";
+    $result = mysqli_query($db, $query);
+    return mysqli_fetch_assoc($result);
 }
 
 
@@ -69,9 +87,77 @@ function changePassword($email, $pass)
     return mysqli_query($db, $query);
 }
 
-function deleteAcc($email)
+function deleteAcc($email, $idClient)
 {
     global $db;
-    $query = "DELETE FROM  users WHERE email='" . $email . "'";
+
+    $query = "DELETE FROM users WHERE email='" . $email . "'";
+    $query2 = "DELETE FROM reservations WHERE idClient='" . $idClient . "'";
+
+    mysqli_query($db, $query);
+    mysqli_query($db, $query2);
+}
+
+function createRooms($name, $star, $rating, $price, $firstImage)
+{
+    global $db;
+
+    $query = "INSERT IGNORE INTO rooms (name, stars, rating, price, firstImage) 
+  			  VALUES('$name', '$star', '$rating', $price, '$firstImage')";
+
     return mysqli_query($db, $query);
+}
+
+function getRooms()
+{
+    global $db;
+
+    $query = "SELECT * FROM rooms";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
+}
+
+function getRoom($id)
+{
+    global $db;
+
+    $query = "SELECT * FROM rooms WHERE id='$id'";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_assoc($result);
+}
+
+function isRoomExists($id)
+{
+    global $db;
+    $user_check_query = "SELECT * FROM rooms WHERE id='$id'";
+    $result = mysqli_query($db, $user_check_query);
+    return mysqli_fetch_assoc($result);
+}
+
+function createReservation($idClient, $idRoom) {
+    global $db;
+
+    $query = "INSERT IGNORE INTO reservations (idClient, idRoom) 
+  			  VALUES('$idClient', '$idRoom')";
+
+    return mysqli_query($db, $query);
+}
+
+function deleteReservation($id) {
+    global $db;
+
+    $query = "DELETE FROM reservations WHERE id='$id'";
+
+    return mysqli_query($db, $query);
+}
+
+function getReservations($idClient) {
+    global $db;
+
+    $query = "SELECT * FROM reservations WHERE idClient='$idClient'";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
 }
