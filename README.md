@@ -32,3 +32,4 @@ npx tailwindcss -i ./tailwind.css -o ./app/assets/css/output.css --watch
 - https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/Mobile_first
 - https://tailwindcss.com/
 - https://www.php.net/docs.php
+- https://sql.sh/
