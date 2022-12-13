@@ -7,7 +7,7 @@
             <div class="container mx-auto px-4">
                 <div class="flex justify-center mb-6">
                     <p class="text-3xl font-bold gradient">
-                        Hôtel Neptune
+                        Hôtel Neptune 
                     </p>
                 </div>
             </div>
