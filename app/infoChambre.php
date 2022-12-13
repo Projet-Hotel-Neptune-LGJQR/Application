@@ -18,48 +18,50 @@ define('room', getRoom(id));
 ?>
 
     <section>
-        <div class="pt-20">
-            <div class="container mx-auto px-4">
+        <section class="py-20">
+            <div class="container mx-auto"
+                 style="background-image: url('assets/img/pattern-white.svg'); background-position: center;">
 
-                <div class="mb-16 max-w-2xl mx-auto text-center">
-                    <div class=" text-center mb-16">
-                        <h1 class="mb-2 text-4xl lg:text-5xl font-bold font-heading">
+                <section class="px-4 lg:px-20">
+
+                    <div class="mt-auto py-4">
+                        <p class="mb-2 text-xl font-bold font-heading">
                             <?php echo room['name'] ?>
-                        </h1>
+                        </p>
+
+                        <div class=" flex items-center font-heading">
+                            {{this.offer.location}}
+                        </div>
                     </div>
-                </div>
 
-                <div class="max-w-4xl flex items-center flex-wrap mx-auto lg:my-0">
+                    <div class="flex flex-wrap lg:space-x-12">
 
-                    <div
-                            class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none mx-6 lg:mx-0"
-                            id="profile">
-                        <div class="p-4 md:p-12 text-center lg:text-left">
-                            <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-                                 style="background-image: url(<?php echo room['firstImage'] ?>)"></div>
-                            <div class="text-3xl font-body pt-8 lg:pt-0 mb-4">
-                                <span class="text-sm font-semibold"></span>&nbsp;<span
-                                        class="font-bold text-xl"><?php echo room['price'] ?></span>&nbsp;<span
-                                        class="text-sm font-semibold">€</span>
+                        <div class="lg:w-3/5">
+                            <div class="mb-4 text-2xl font-medium text-center text-gray-900 lg:text-3xl"></div>
+                            <img alt="" src="<?php echo room['firstImage'] ?>"
+                                 class="rounded-none lg:rounded-lg shadow-2xl">
+
+                            <div class="mt-4">
+                                <h4 class="text-2xl font-bold">Description</h4>
+                                <p class="my-4">{{this.offer.description}}</p>
                             </div>
-                            <button type="button"
-                                    class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
-                                Reserver cette chambre
-                            </button>
+                        </div>
+
+                        <div class="lg:w-1/3 py-4">
+                            <h4 class="text-2xl font-bold text-center"><?php echo room['price'] ?> €</h4>
+
+                            <div class="flex justify-center">
+                                <button type="button"
+                                        class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
+                                    Reserver cette chambre
+                                </button>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="w-full lg:w-2/5">
-                        <div class="relative" style="z-index: 0;">
-                            <img alt="Photo de profil" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block w-full h-full"
-                                 src="<?php echo room['firstImage'] ?>">
-                        </div>
-                    </div>
-
-                </div>
             </div>
-        </div>
+        </section>
     </section>
-
 
 <?php include('./include/footer.php'); ?>
