@@ -121,7 +121,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
                                     <div class="mt-3 flex items-center">
                                         <span class="text-sm font-semibold"></span>&nbsp;<span
                                                 class="font-bold text-xl"><?php echo $room[4] ?></span>&nbsp;<span
-                                                class="text-sm font-semibold">€</span>
+                                                class="text-sm font-semibold">€/nuit</span>
                                     </div>
                                 </div>
                             </a>
