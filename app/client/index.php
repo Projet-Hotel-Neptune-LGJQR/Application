@@ -10,7 +10,15 @@ define('reservations', getReservations(getAccIdFromEmail($_SESSION['email'])['id
 $tab_res = array();
 
 foreach (reservations as $res) {
-    $tab_res[] = getRoom($res[2]);
+    $temp = getRoom($res[2]);
+    $temp['resId'] = $res[0];
+    $tab_res[] = $temp;
+}
+
+if (isset($_GET['del'])) {
+    define('resId', $_GET['del']);
+    deleteReservation(resId);
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index.php\">";
 }
 
 ?>
@@ -79,7 +87,7 @@ foreach (reservations as $res) {
                                         class="text-sm font-semibold">€</span>
                                 </div>
                                 <div class="p-4 border-t border-b text-xs text-gray-700 flex justify-center">
-                                    <a
+                                    <a href="/client/index.php?del=<?php echo $res['resId'] ?>"
                                        class="cursor-pointer transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                         Supprimer la reservation
                                     </a>
