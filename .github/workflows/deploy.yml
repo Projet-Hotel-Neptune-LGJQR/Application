@@ -11,12 +11,9 @@ jobs:
     runs-on: ns31419955
 
     steps:
-<<<<<<< Updated upstream
-=======
       - uses: actions/checkout@v1
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
->>>>>>> Stashed changes
         env:
           ARGS: "-avz --delete"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
