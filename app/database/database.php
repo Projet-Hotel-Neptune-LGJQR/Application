@@ -26,7 +26,7 @@ function createAcc($name, $email, $password)
     global $db;
 
     $query = "INSERT IGNORE INTO users (name, email, password, isAdmin) 
-  			  VALUES('$name', '$email', '$password', true)";
+  			  VALUES('$name', '$email', '$password', false)";
 
     return mysqli_query($db, $query);
 }
