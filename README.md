@@ -24,3 +24,11 @@ npm i
 ```
 npx tailwindcss -i ./tailwind.css -o ./app/assets/css/output.css --watch
 ```
+
+## Ressources
+
+- https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Gitflow-Windows-Install-Git-Flow-Installation
+- https://developer.mozilla.org/fr/docs/Glossary/SPA
+- https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/Mobile_first
+- https://tailwindcss.com/
+- https://www.php.net/docs.php
