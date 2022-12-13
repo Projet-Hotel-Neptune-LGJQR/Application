@@ -112,3 +112,4 @@
     </div>
 </footer>
 
+<script src="../assets/js/global.js" async></script>

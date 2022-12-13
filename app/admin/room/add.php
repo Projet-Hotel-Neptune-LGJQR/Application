@@ -42,7 +42,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
                 <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                     <h1 class="text-lg font-bold">Ajouter une chambre</h1>
                     <form class="flex flex-col mt-4" enctype="multipart/form-data" action="/admin/room/add.php"
-                          method="post">
+                          method="post" data-turbo="false">
                         <label>
                             <input
                                     type="text"

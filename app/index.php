@@ -41,7 +41,7 @@
                         <img class="rounded-lg mb-3" src="assets/img/home/image%206.png">
 
                         <div class="flex flex-col items-center justify-center text-sm">
-                            <h1>VOS FUTURS VOYAGES SONT FLEXIBLES </h1>
+                            <h1>VOS FUTURS <VOYA>                           </VOYA>GES SONT FLEXIBLES </h1>
                         </div>
                         <div class="flex justify-center pt-3">
                             <button type="button"

@@ -24,7 +24,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap" rel="stylesheet">
 
-    <script src="../assets/js/global.js" async></script>
+    <script src="../assets/js/turbo.js" type="module" async></script>
 </head>
 
 <nav class="bg-color px-2 sm:px-4 py-2.5 w-full">
@@ -91,6 +91,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                             <?php endif ?>
                             <li>
                                 <a
+                                        data-turbo="false"
                                         href="index.php?logout='1'"
                                         class="block cursor-pointer py-2 px-4 hover:bg-gray-100 text-white hover:text-black">Déconnexion</a>
                             </li>
@@ -107,13 +108,6 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                        id="home"
                        class="block py-2 pr-4 pl-3 text-gray-500 hover:text-white md:p-0">
                         Accueil
-                    </a>
-                </li>
-                <li>
-                    <a href="#about"
-                       id="about"
-                       class="block py-2 pr-4 pl-3 text-gray-500 hover:text-white md:p-0">
-                        A Propos
                     </a>
                 </li>
                 <li>

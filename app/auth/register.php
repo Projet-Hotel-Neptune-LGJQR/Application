@@ -28,7 +28,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
             <div class="container mx-auto p-4 bg-white">
                 <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                     <h1 class="text-lg font-bold">Inscription</h1>
-                    <form class="flex flex-col mt-4" action="auth/register.php" method="post">
+                    <form class="flex flex-col mt-4" action="auth/register.php" method="post" data-turbo="false">
                         <label>
                             <input
                                     type="text"
@@ -78,15 +78,15 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
                                 <?php endforeach ?>
                             </div>
                         <?php endif ?>
-                        <div class="flex flex-col items-center mt-5">
-                            <p class="mt-1 text-xs font-light text-gray-500">
-                                Vous avez déjà un compte ?
-                                <a class="ml-1 font-medium text-gold-custom" href="auth/login.php">
-                                    Connectez-vous
-                                </a>
-                            </p>
-                        </div>
                     </form>
+                    <div class="flex flex-col items-center mt-5">
+                        <p class="mt-1 text-xs font-light text-gray-500">
+                            Vous avez déjà un compte ?
+                            <a class="ml-1 font-medium text-gold-custom" href="auth/login.php">
+                                Connectez-vous
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
 

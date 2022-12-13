@@ -35,7 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <div class="container mx-auto p-4 bg-white">
                 <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                     <h1 class="text-lg font-bold">Connexion</h1>
-                    <form class="flex flex-col mt-4" action="auth/login.php" method="post">
+                    <form class="flex flex-col mt-4" action="auth/login.php" method="post" data-turbo="false">
                         <label>
                             <input
                                     type="email"
@@ -67,15 +67,15 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                                 <?php endforeach ?>
                             </div>
                         <?php endif ?>
-                        <div class="flex flex-col items-center mt-5">
-                            <p class="mt-1 text-xs font-light text-gray-500">
-                                Vous n'avez pas de compte ?
-                                <a class="ml-1 font-medium text-gold-custom" href="auth/register.php">
-                                    Inscrivez-vous
-                                </a>
-                            </p>
-                        </div>
                     </form>
+                    <div class="flex flex-col items-center mt-5">
+                        <p class="mt-1 text-xs font-light text-gray-500">
+                            Vous n'avez pas de compte ?
+                            <a class="ml-1 font-medium text-gold-custom" href="auth/register.php">
+                                Inscrivez-vous
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
 

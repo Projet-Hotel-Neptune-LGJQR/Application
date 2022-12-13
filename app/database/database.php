@@ -105,3 +105,21 @@ function getRooms()
 
     return mysqli_fetch_all($result);
 }
+
+function getRoom($id)
+{
+    global $db;
+
+    $query = "SELECT * FROM rooms WHERE id='$id'";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_assoc($result);
+}
+
+function isRoomExists($id)
+{
+    global $db;
+    $user_check_query = "SELECT * FROM rooms WHERE id='$id'";
+    $result = mysqli_query($db, $user_check_query);
+    return mysqli_fetch_assoc($result);
+}

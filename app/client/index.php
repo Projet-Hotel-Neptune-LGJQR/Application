@@ -7,4 +7,3 @@ if (!isset($_SESSION['email'])) {
 ?>
 
 <?php include('../include/footer.php'); ?>
-

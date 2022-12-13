@@ -28,4 +28,3 @@ if (!isset($_SESSION['admin'])) {
 
 
 <?php include('../include/footer.php'); ?>
-
