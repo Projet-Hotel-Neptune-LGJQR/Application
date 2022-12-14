@@ -3,7 +3,7 @@
 
 <?php
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
 }
 ?>
 
@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin'])) {
                 <div class="flex justify-center mb-6">
 
                     <a data-turbo-preload
-                       href="/admin/room/add.php"
+                       href="/admin/room/add"
                        class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                         Ajouter une chambres
                     </a>

@@ -33,7 +33,7 @@
                             </div>
                             <div class="flex justify-center pt-3">
                                 <a data-turbo-preload
-                                   href="reservation.php"
+                                   href="reservation"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
                                 </a>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="flex justify-center pt-3">
                                 <a data-turbo-preload
-                                   href="reservation.php"
+                                   href="reservation"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     En savoir plus
                                 </a>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="flex justify-center pt-3">
                                 <a data-turbo-preload
-                                   href="reservation.php"
+                                   href="reservation"
                                         class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Obtenez des détails
                                 </a>

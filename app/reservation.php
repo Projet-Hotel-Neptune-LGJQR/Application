@@ -25,7 +25,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
     </section>
 
     <section class="pt-12">
-        <form class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" action="reservation.php" method="post"
+        <form class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" action="reservation" method="post"
               data-turbo="false">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <div class="container flex items-center justify-center md:justify-between">
@@ -92,7 +92,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                         <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
                             <a class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-lg overflow-hidden"
                                data-turbo-preload
-                               href="infoChambre.php?id=<?php echo $room[0] ?>">
+                               href="infoChambre?id=<?php echo $room[0] ?>">
                                 <div class="relative pb-48 overflow-hidden">
                                     <img alt="" class="absolute inset-0 h-full w-full object-cover"
                                          src="<?php echo $room[5] ?>" width="30">

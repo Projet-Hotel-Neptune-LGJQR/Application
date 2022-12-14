@@ -2,7 +2,7 @@
 
 <?php
 if (!isset($_SESSION['email'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
 }
 
 include '../database/database.php';
@@ -18,7 +18,7 @@ foreach (reservations as $res) {
 if (isset($_GET['del'])) {
     define('resId', $_GET['del']);
     deleteReservation(resId);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index\">";
 }
 
 ?>
@@ -87,7 +87,7 @@ if (isset($_GET['del'])) {
                                         class="text-sm font-semibold">€</span>
                                 </div>
                                 <div class="p-4 border-t border-b text-xs text-gray-700 flex justify-center">
-                                    <a href="/client/index.php?del=<?php echo $res['resId'] ?>"
+                                    <a href="/client/index?del=<?php echo $res['resId'] ?>"
                                        class="cursor-pointer transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                         Supprimer la reservation
                                     </a>

@@ -5,7 +5,7 @@ session_start();
 if (isset($_GET['logout']) && isset($_SESSION['email'])) {
     session_destroy();
     unset($_SESSION['email']);
-    header("Refresh:0; url=index.php");
+    header("Refresh:0; url=index");
 }
 ?>
 <head>
@@ -30,7 +30,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
 <nav class="bg-color px-2 sm:px-4 py-2.5 w-full">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <div class="text-white">
-            <a href="index.php"
+            <a href="index"
                class="block rounded-full border-2 shadow-xl mx-auto h-12 w-12 bg-cover bg-center hover:opacity-40 duration-300"
                style="background-image: url('../assets/img/logo.webp')"></a>
         </div>
@@ -48,7 +48,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
             <div class="hidden md:inline-flex items-center space-x-4">
                 <?php if (!isset($_SESSION['email'])) : ?>
                     <a data-turbo-preload
-                       href="../auth/register.php"
+                       href="../auth/register"
                        type="button"
                        class="text-white bg-white hover:bg-black text-md hover:text-white border duration-200 border-white text-black font-medium rounded-lg text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                         Inscription
@@ -76,18 +76,18 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                         <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefault">
                             <li>
                                 <a data-turbo-preload
-                                   href="/client/index.php"
+                                   href="/client/index"
                                    class="block py-2 px-4 hover:bg-gray-100 text-white hover:text-black">Dashboard</a>
                             </li>
                             <li>
                                 <a data-turbo-preload
-                                   href="/client/settings.php"
+                                   href="/client/settings"
                                    class="block cursor-pointer py-2 px-4 hover:bg-gray-100 text-white hover:text-black">Options</a>
                             </li>
                             <?php if (isset($_SESSION['admin'])) : ?>
                                 <li>
                                     <a data-turbo-preload
-                                       href="/admin/index.php"
+                                       href="/admin/index"
                                        class="block cursor-pointer py-2 px-4 hover:bg-gray-100 text-white hover:text-black">Panel
                                         Admin</a>
                                 </li>
@@ -95,7 +95,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                             <li>
                                 <a
                                         data-turbo="false"
-                                        href="index.php?logout='1'"
+                                        href="index?logout='1'"
                                         class="block cursor-pointer py-2 px-4 hover:bg-gray-100 text-white hover:text-black">Déconnexion</a>
                             </li>
                         </ul>
@@ -108,7 +108,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                     class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
                 <li>
                     <a data-turbo-preload
-                       href="../index.php"
+                       href="../index"
                        id="home"
                        class="block py-2 pr-4 pl-3 text-gray-500 hover:text-white md:p-0">
                         Accueil
@@ -116,7 +116,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                 </li>
                 <li>
                     <a data-turbo-preload
-                       href="../reservation.php"
+                       href="../reservation"
                        id="reservation"
                        class="block py-2 pr-4 pl-3 text-gray-500 hover:text-white md:p-0">
                         Réservations
@@ -124,7 +124,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                 </li>
                 <li>
                     <a data-turbo-preload
-                       href="../contact.php"
+                       href="../contact"
                        id="contact"
                        class="block py-2 pr-4 pl-3 text-gray-500 hover:text-white md:p-0">
                         Contact
@@ -148,21 +148,21 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                     <ul>
                         <li class="mb-1">
                             <a class="block p-4 text-sm text-gold-custom"
-                               href="../index.php"
+                               href="../index"
                                data-turbo-preload>
                                 Accueil
                             </a>
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm text-gold-custom"
-                               href="../reservation.php"
+                               href="../reservation"
                                data-turbo-preload>
                                 Réservations
                             </a>
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm text-gold-custom"
-                               href="../contact.php"
+                               href="../contact"
                                data-turbo-preload>
                                 Contact
                             </a>
@@ -170,7 +170,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                     </ul>
                     <div class="mt-4 pt-6 border-t border-blueGray-100">
                         <a class="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-black text-gold-custom rounded"
-                           href="../auth/register.php" data-turbo-preload>
+                           href="../auth/register" data-turbo-preload>
                             S'inscrire
                         </a>
                     </div>

@@ -16,7 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             }
             $_SESSION['email'] = email;
             $_SESSION['success'] = "You are now logged in";
-            echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+            echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
             return;
         }
         $errors[] = "Mauvais identifiants.";
@@ -35,7 +35,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <div class="container mx-auto p-4 bg-white">
                     <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                         <h1 class="text-lg font-bold">Connexion</h1>
-                        <form class="flex flex-col mt-4" action="auth/login.php" method="post" data-turbo="false">
+                        <form class="flex flex-col mt-4" action="auth/login" method="post" data-turbo="false">
                             <label>
                                 <input
                                         type="email"
@@ -72,7 +72,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                             <p class="mt-1 text-xs font-light text-gray-500">
                                 Vous n'avez pas de compte ?
                                 <a data-turbo-preload
-                                   class="ml-1 font-medium text-gold-custom" href="auth/register.php">
+                                   class="ml-1 font-medium text-gold-custom" href="auth/register">
                                     Inscrivez-vous
                                 </a>
                             </p>

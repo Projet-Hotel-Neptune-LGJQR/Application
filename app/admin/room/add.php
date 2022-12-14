@@ -3,7 +3,7 @@
 
 <?php
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
 }
 $errors = array();
 include "../../database/database.php";
@@ -30,7 +30,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
 
     if (move_uploaded_file(room_firstimage['tmp_name'], $path)) {
         createRooms(room_name, room_star, room_rating, room_price, 'admin/room/' . $path, room_description);
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms\">";
     }
 }
 
@@ -42,7 +42,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
                 <div class="container mx-auto p-4 bg-white">
                     <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                         <h1 class="text-lg font-bold">Ajouter une chambre</h1>
-                        <form class="flex flex-col mt-4" enctype="multipart/form-data" action="/admin/room/add.php"
+                        <form class="flex flex-col mt-4" enctype="multipart/form-data" action="/admin/room/add"
                               method="post" data-turbo="false">
                             <label>
                                 <input

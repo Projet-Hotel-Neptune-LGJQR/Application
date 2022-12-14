@@ -15,7 +15,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
         $errors[] = "Ce compte existe déjà.";
     } else {
         createAcc(name, email, password_hash(password, PASSWORD_DEFAULT));
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login\">";
     }
 }
 
@@ -28,7 +28,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
                 <div class="container mx-auto p-4 bg-white">
                     <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
                         <h1 class="text-lg font-bold">Inscription</h1>
-                        <form class="flex flex-col mt-4" action="auth/register.php" method="post" data-turbo="false">
+                        <form class="flex flex-col mt-4" action="auth/register" method="post" data-turbo="false">
                             <label>
                                 <input
                                         type="text"
@@ -83,7 +83,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
                             <p class="mt-1 text-xs font-light text-gray-500">
                                 Vous avez déjà un compte ?
                                 <a data-turbo-preload
-                                   class="ml-1 font-medium text-gold-custom" href="auth/login.php">
+                                   class="ml-1 font-medium text-gold-custom" href="auth/login">
                                     Connectez-vous
                                 </a>
                             </p>
