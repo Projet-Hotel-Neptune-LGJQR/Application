@@ -36,7 +36,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
         </div>
         <div class="flex md:order-2">
             <button type="button"
-                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 navbar-burger">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
@@ -132,6 +132,50 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
                 </li>
             </ul>
         </div>
+        <div class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
+            <div class="navbar-backdrop fixed inset-0 bg-blueGray-800 opacity-25"></div>
+            <nav class="relative flex flex-col py-6 px-6 w-full h-full bg-white border-r overflow-y-auto">
+                <div class="flex items-center mb-8">
+                    <button class="navbar-close">
+                        <svg class="h-6 w-6 text-coolGray-500 cursor-pointer hover:text-blueGray-500"
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    <ul>
+                        <li class="mb-1">
+                            <a class="block p-4 text-sm text-gold-custom"
+                               href="../index.php"
+                               data-turbo-preload>
+                                Accueil
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="block p-4 text-sm text-gold-custom"
+                               href="../reservation.php"
+                               data-turbo-preload>
+                                Réservations
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="block p-4 text-sm text-gold-custom"
+                               href="../contact.php"
+                               data-turbo-preload>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-4 pt-6 border-t border-blueGray-100">
+                        <a class="block px-4 py-3 mb-3 text-xs text-center font-semibold leading-none bg-black text-gold-custom rounded"
+                           href="../auth/register.php" data-turbo-preload>
+                            S'inscrire
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </div>
 </nav>
-
