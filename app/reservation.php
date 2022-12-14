@@ -1,4 +1,7 @@
 <?php
+define('maxDate', date("Y-m-d", strtotime(' + 1 years')));
+define('currentData', date("Y-m-d"));
+
 include('./include/header.php');
 include('./database/database.php');
 
@@ -22,7 +25,8 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
     </section>
 
     <section class="pt-12">
-        <form class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" action="reservation.php" method="post" data-turbo="false">
+        <form class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" action="reservation.php" method="post"
+              data-turbo="false">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
                 <div class="container flex items-center justify-center md:justify-between">
                     <div class="container flex flex-col md:items-center md:space-x-8 md:flex-row">
@@ -41,16 +45,16 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                             <span class="text-white">Arrivé</span>
                             <label for="start">
                                 <input type="date" id="start" name="trip-start"
-                                       value="2022-12-13"
-                                       min="2022-12-13" max="2023-12-13">
+                                       value='<?php echo currentData ?>'
+                                       min='<?php echo currentData ?>' max='<?php echo maxDate ?>'
                             </label>
                         </div>
                         <div class="flex flex-col ">
                             <span class="text-white">Départ</span>
                             <label for="start">
                                 <input type="date" id="start" name="trip-end"
-                                       value="2022-12-13"
-                                       min="2022-12-13" max="2023-12-13">
+                                       value='<?php echo date("Y-m-d", strtotime(' + 1 day')) ?>'
+                                       min='<?php echo currentData ?>' max='<?php echo maxDate ?>'
                             </label>
                         </div>
                     </div>
@@ -70,7 +74,8 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                     <div class="flex flex-col">
                         <span class="text-white">Préférences tarifaires</span>
                         <label for="cowbell">
-                            <input type="range" name="price" value="0" min="59" max="390" oninput="num.value = this.value + '€'">
+                            <input type="range" name="price" value="0" min="59" max="390"
+                                   oninput="num.value = this.value + '€'">
                             <output id="num" class="text-white text-lg">59€</output>
                         </label>
                     </div>
