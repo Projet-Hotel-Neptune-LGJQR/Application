@@ -1,4 +1,7 @@
 <?php
+define('maxDate', date("Y-m-d", strtotime(' + 1 years')));
+define('currentData', date("Y-m-d"));
+
 include('./include/header.php');
 include('./database/database.php');
 
@@ -41,16 +44,16 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                             <span class="text-white">Arrivé</span>
                             <label for="start">
                                 <input type="date" id="start" name="trip-start"
-                                       value="2022-12-13"
-                                       min="2022-12-13" max="2023-12-13">
+                                       value='<?php echo currentData?>'
+                                       min='<?php echo currentData?>' max='<?php echo maxDate?>'
                             </label>
                         </div>
                         <div class="flex flex-col ">
                             <span class="text-white">Départ</span>
                             <label for="start">
                                 <input type="date" id="start" name="trip-end"
-                                       value="2022-12-13"
-                                       min="2022-12-13" max="2023-12-13">
+                                       value='<?php echo date("Y-m-d", strtotime(' + 1 day'))?>'
+                                       min='<?php echo currentData?>' max='<?php echo maxDate?>'
                             </label>
                         </div>
                     </div>
