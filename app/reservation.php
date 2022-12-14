@@ -2,9 +2,18 @@
 include('./include/header.php');
 include('./database/database.php');
 
-if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
+$showedOffers = array();
+
+if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['price'])) {
     define('trip_start', $_POST['trip-start']);
     define('trip_end', $_POST['trip-end']);
+    define('trip_price', $_POST['price']);
+
+    foreach (getRooms() as $room) {
+        if ($room[4] <= trip_price) {
+            $showedOffers[] = $room;
+        }
+    }
 }
 ?>
 
@@ -13,10 +22,9 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
     </section>
 
     <section class="pt-12">
-        <div class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" style="">
+        <form class="bg-grey-custom px-2 sm:px-4 py-2.5 w-full sm:h-64 md:h-40" action="reservation.php" method="post" data-turbo="false">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <form class="container flex items-center justify-center md:justify-between"
-                      action="reservation.php" method="post" data-turbo="false">
+                <div class="container flex items-center justify-center md:justify-between">
                     <div class="container flex flex-col md:items-center md:space-x-8 md:flex-row">
                         <div class="flex flex-col">
                             <span class="text-white">Chambre et occupent</span>
@@ -55,27 +63,27 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end'])) {
                         </div>
 
                     </div>
-                </form>
+                </div>
             </div>
             <div class="pt-8">
                 <div class="container flex items-center justify-center md:justify-between">
                     <div class="flex flex-col">
                         <span class="text-white">Préférences tarifaires</span>
                         <label for="cowbell">
-                            <input type="range" value="0" min="59" max="390" oninput="num.value = this.value + '€'">
+                            <input type="range" name="price" value="0" min="59" max="390" oninput="num.value = this.value + '€'">
                             <output id="num" class="text-white text-lg">59€</output>
                         </label>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
 
     <section class="pb-12">
         <div class="pt-6">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap -mx-4">
-                    <?php foreach (getRooms() as $room) : ?>
+                    <?php foreach ($showedOffers as $room) : ?>
                         <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
                             <a class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-lg overflow-hidden"
                                data-turbo-preload
