@@ -113,3 +113,4 @@
 </footer>
 
 <script src="../assets/js/global.js" async></script>
+<script src="../assets/js/nav.js" async></script>
