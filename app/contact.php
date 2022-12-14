@@ -18,7 +18,7 @@
 
                 <div class="container mx-auto p-4 bg-white">
                     <div class="w-full md:w-1/2 lg:w-1/3 mx-auto my-12">
-                        <form class="flex flex-col mt-4" action="contact.php" method="post" data-turbo="false">
+                        <form class="flex flex-col mt-4" action="contact" method="post" data-turbo="false">
                             <label>
                                 <input
                                         type="text"

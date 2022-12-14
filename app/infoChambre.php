@@ -2,7 +2,7 @@
 
 <?php
 if (!isset($_GET['id'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
     die();
 }
 
@@ -11,20 +11,20 @@ include 'database/database.php';
 define('id', $_GET['id']);
 
 if (!isRoomExists(id)) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
     die();
 }
 define('room', getRoom(id));
 
 if (isset($_GET['res'])) {
     if (!isset($_SESSION['email'])) {
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login\">";
         die();
     }
 
     define('resId', $_GET['res']);
     createReservation(getAccIdFromEmail($_SESSION['email'])['id'], resId);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index.php\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index\">";
 }
 ?>
 
@@ -61,7 +61,7 @@ if (isset($_GET['res'])) {
                             <h4 class="text-2xl font-bold text-center"><?php echo room['price'] ?> €</h4>
 
                             <div class="flex justify-center">
-                                <a href="infoChambre.php?id=<?php echo room['id'] ?>&res=<?php echo room['id'] ?>"
+                                <a href="infoChambre?id=<?php echo room['id'] ?>&res=<?php echo room['id'] ?>"
                                         class="cursor-pointer transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                     Reserver cette chambre
                                 </a>
