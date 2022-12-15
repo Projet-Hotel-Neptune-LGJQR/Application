@@ -1,8 +1,9 @@
 <?php
+include('./include/header.php');
+
 define('maxDate', date("Y-m-d", strtotime(' + 1 years')));
 define('currentData', date("Y-m-d"));
 
-include('./include/header.php');
 include('./database/database.php');
 
 $showedOffers = array();

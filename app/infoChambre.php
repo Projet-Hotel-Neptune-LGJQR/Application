@@ -1,6 +1,6 @@
-<?php include('./include/header.php'); ?>
-
 <?php
+include('./include/header.php');
+
 if (!isset($_GET['id'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
     die();

@@ -1,7 +1,7 @@
-<?php include('../include/header.php'); ?>
-<?php include('../include/admin.php'); ?>
-
 <?php
+include('../include/header.php');
+include('../include/admin.php');
+
 if (!isset($_SESSION['admin'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
 }

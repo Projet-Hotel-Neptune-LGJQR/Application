@@ -1,6 +1,6 @@
-<?php include('../include/header.php'); ?>
-
 <?php
+include('../include/header.php');
+
 $errors = array();
 
 include '../database/database.php';
