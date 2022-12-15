@@ -137,6 +137,16 @@ function isRoomExists($id)
     return mysqli_fetch_assoc($result);
 }
 
+function deleteRoom($id) {
+    global $db;
+
+    $query = "DELETE FROM rooms WHERE id='$id'";
+    $query2 = "DELETE FROM reservations WHERE idRoom='$id'";
+
+    mysqli_query($db, $query);
+    mysqli_query($db, $query2);
+}
+
 function createReservation($idClient, $idRoom) {
     global $db;
 
@@ -151,7 +161,7 @@ function deleteReservation($id) {
 
     $query = "DELETE FROM reservations WHERE id='$id'";
 
-    return mysqli_query($db, $query);
+    mysqli_query($db, $query);
 }
 
 function getReservations($idClient) {
