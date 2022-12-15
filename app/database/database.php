@@ -195,11 +195,21 @@ function deleteReservation($id)
     mysqli_query($db, $query);
 }
 
-function getReservations($idClient)
+function getReservation($idClient)
 {
     global $db;
 
     $query = "SELECT * FROM reservations WHERE idClient='$idClient'";
+    $result = mysqli_query($db, $query);
+
+    return mysqli_fetch_all($result);
+}
+
+function getReservations()
+{
+    global $db;
+
+    $query = "SELECT * FROM reservations";
     $result = mysqli_query($db, $query);
 
     return mysqli_fetch_all($result);
