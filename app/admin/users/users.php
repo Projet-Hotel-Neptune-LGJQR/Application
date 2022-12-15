@@ -17,8 +17,8 @@ function delUser($email)
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/users\">";
 }
 
-if (isset($_GET['user'])) {
-    delUser($_GET['user']);
+if (isset($_GET['del'])) {
+    delUser($_GET['del']);
 }
 ?>
 
@@ -46,7 +46,7 @@ if (isset($_GET['user'])) {
                                 </div>
                                 <div>
                                     <a type="button"
-                                       href="/admin/users/users?user=<?php echo $user[2] ?>"
+                                       href="/admin/users/del?user=<?php echo $user[2] ?>"
                                        class=" ml-12 transform hover:scale-105 motion-reduce:transform-none duration-300 bg-black text-md text-gold-custom duration-200 font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                         Supprimer
                                     </a>
