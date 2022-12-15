@@ -13,12 +13,20 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
     define('trip_end', $_POST['trip-end']);
     define('trip_price', $_POST['price']);
 
+    $reserved = array();
+
+    foreach (getReservations() as $res) {
+        $reserved[] = $res[2];
+    }
+
     foreach (getRooms() as $room) {
-        if ($room[4] <= trip_price) {
+        if ($room[4] <= trip_price && !in_array($room[0], $reserved)) {
             $showedOffers[] = $room;
         }
     }
+
 }
+echo json_encode(getReservations());
 ?>
 
     <section class="pt-12">

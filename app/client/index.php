@@ -6,7 +6,7 @@ if (!isset($_SESSION['email'])) {
 }
 
 include '../database/database.php';
-define('reservations', getReservations(getAccIdFromEmail($_SESSION['email'])['id']));
+define('reservations', getReservation(getAccIdFromEmail($_SESSION['email'])['id']));
 $tab_res = array();
 
 foreach (reservations as $res) {
