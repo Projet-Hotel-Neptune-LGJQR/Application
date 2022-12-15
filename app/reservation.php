@@ -14,6 +14,8 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
     define('trip_end', $_POST['trip-end']);
     define('trip_price', $_POST['price']);
 
+    define('time', floor(abs(strtotime(trip_end) - strtotime(trip_start)))/86400);
+
     $reserved = array();
 
     foreach (getReservations() as $res) {
@@ -112,7 +114,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                         <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
                             <a class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-lg overflow-hidden"
                                data-turbo-preload
-                               href="infoChambre?id=<?php echo $room[0] ?>">
+                               href="infoChambre?id=<?php echo $room[0] ?>&time=<?php echo time ?>">
                                 <div class="relative pb-48 overflow-hidden">
                                     <img alt="" class="absolute inset-0 h-full w-full object-cover"
                                          src="<?php echo $room[5] ?>" width="30">

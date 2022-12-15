@@ -5,7 +5,6 @@ if (!isset($_GET['id'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
     die();
 }
-
 include 'database/database.php';
 
 define('id', $_GET['id']);
@@ -15,6 +14,17 @@ if (!isRoomExists(id)) {
     die();
 }
 define('room', getRoom(id));
+$price = room['price'];
+
+if (isset($_GET['time'])) {
+    define('time', $_GET['time']);
+    if (time <= 0) {
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
+        return;
+    }
+    $price = $price * time;
+}
+
 
 if (isset($_GET['res'])) {
     if (!isset($_SESSION['email'])) {
@@ -58,7 +68,7 @@ if (isset($_GET['res'])) {
                         </div>
 
                         <div class="lg:w-1/3 py-4">
-                            <h4 class="text-2xl font-bold text-center"><?php echo room['price'] ?> €</h4>
+                            <h4 class="text-2xl font-bold text-center"><?php echo $price ?> €</h4>
 
                             <div class="flex justify-center">
                                 <a href="infoChambre?id=<?php echo room['id'] ?>&res=<?php echo room['id'] ?>"
