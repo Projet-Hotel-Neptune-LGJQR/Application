@@ -87,9 +87,9 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                     <div class="flex flex-col">
                         <span class="text-white">Préférences tarifaires</span>
                         <label for="cowbell">
-                            <input type="range" name="price" value="0" min="59" max="390"
+                            <input type="range" name="price" value="0" min="30" max="390"
                                    oninput="num.value = this.value + '€'">
-                            <output id="num" class="text-white text-lg">59€</output>
+                            <output id="num" class="text-white text-lg">30€</output>
                         </label>
                     </div>
                 </div>
