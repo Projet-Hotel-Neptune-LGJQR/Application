@@ -26,7 +26,6 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
     }
 
 }
-echo json_encode(getReservations());
 ?>
 
     <section class="pt-12">
