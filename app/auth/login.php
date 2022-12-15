@@ -1,6 +1,6 @@
-<?php include('../include/header.php'); ?>
-
 <?php
+include('../include/header.php');
+
 $errors = array();
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
