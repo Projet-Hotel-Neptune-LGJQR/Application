@@ -85,7 +85,7 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
         </form>
     </section>
 
-    <section class="pb-12">
+    <section class="pb-12 animate__animated animate__fadeInLeft">
         <div class="pt-6">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap -mx-4">
