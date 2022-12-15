@@ -147,6 +147,17 @@ function deleteRoom($id) {
     mysqli_query($db, $query2);
 }
 
+function updateRoom($name, $star, $rating, $price, $firstImage, $description, $id)
+{
+    global $db;
+    $safe_desc = mysqli_real_escape_string($db, $description);
+
+    $query = "UPDATE rooms SET name = '$name', stars = '$star', rating = '$rating', 
+                 price = '$price', firstImage = '$firstImage', description = '" . $safe_desc . "' WHERE id='$id'";
+
+    return mysqli_query($db, $query);
+}
+
 function createReservation($idClient, $idRoom) {
     global $db;
 
