@@ -18,7 +18,7 @@ if (!isset($_SESSION['admin'])) {
                     </a>
 
                     <a data-turbo-preload
-                       href="/admin/users"
+                       href="/admin/users/users"
                        class="transform hover:scale-105 motion-reduce:transform-none duration-300 text-white bg-black text-md text-gold-custom border duration-200 border-white font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                         Gestion des utilisateurs
                     </a>

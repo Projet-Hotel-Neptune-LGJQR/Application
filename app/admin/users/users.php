@@ -1,12 +1,12 @@
 <?php
-include('../include/header.php');
-include('../include/admin.php');
+include('../../include/header.php');
+include('../../include/admin.php');
 
 if (!isset($_SESSION['admin'])) {
     echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
 }
 
-include "../database/database.php";
+include "../../database/database.php";
 
 define('users', getAccs());
 
@@ -14,7 +14,7 @@ function delUser($email)
 {
     deleteAcc($email, getAccIdFromEmail($email)['id']);
 
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/users\">";
 }
 
 if (isset($_GET['user'])) {
@@ -39,7 +39,14 @@ if (isset($_GET['user'])) {
                             <div class="pb-6 md:pb-0 lg:border-l-2 lg:border-black flex flex-col justify-center items-center lg:space-y-6 mr-12">
                                 <div>
                                     <a type="button"
-                                       href="/admin/users?user=<?php echo $user[2] ?>"
+                                       href="/admin/users/manageUsers?user=<?php echo $user[2] ?>"
+                                       class=" ml-12 transform hover:scale-105 motion-reduce:transform-none duration-300 bg-black text-md text-gold-custom duration-200 font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
+                                        Modifier
+                                    </a>
+                                </div>
+                                <div>
+                                    <a type="button"
+                                       href="/admin/users/users?user=<?php echo $user[2] ?>"
                                        class=" ml-12 transform hover:scale-105 motion-reduce:transform-none duration-300 bg-black text-md text-gold-custom duration-200 font-medium text-sm px-3 py-1.5 text-center mr-3 md:mr-0">
                                         Supprimer
                                     </a>
@@ -52,4 +59,4 @@ if (isset($_GET['user'])) {
         </div>
     </section>
 
-<?php include('../include/footer.php'); ?>
+<?php include('../../include/footer.php'); ?>
