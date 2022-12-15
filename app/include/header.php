@@ -19,6 +19,7 @@ if (isset($_GET['logout']) && isset($_SESSION['email'])) {
     <link href="../assets/css/output.css" rel="stylesheet">
     <link href="../assets/css/global.css" rel="stylesheet">
     <link href="../assets/img/logo.webp" rel="icon" type="image/webp"/>
+    <link href="../assets/css/animate.min.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
