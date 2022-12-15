@@ -7,6 +7,7 @@ define('currentData', date("Y-m-d"));
 include('./database/database.php');
 
 $showedOffers = array();
+$errors = array();
 
 if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['price'])) {
     define('trip_start', $_POST['trip-start']);
@@ -23,6 +24,10 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
         if ($room[4] <= trip_price && !in_array($room[0], $reserved)) {
             $showedOffers[] = $room;
         }
+    }
+
+    if (empty($showedOffers)) {
+        $errors[] = "Aucune offre correspond à votre demande.";
     }
 
 }
@@ -96,6 +101,13 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
         <div class="pt-6">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap -mx-4">
+                    <?php if (count($errors) > 0) : ?>
+                        <div class="error">
+                            <?php foreach ($errors as $error) : ?>
+                                <p class="text-red-500"><?php echo $error ?></p>
+                            <?php endforeach ?>
+                        </div>
+                    <?php endif ?>
                     <?php foreach ($showedOffers as $room) : ?>
                         <div class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4">
                             <a class="c-card block bg-gray-300 shadow-md hover:shadow-xl rounded-lg overflow-hidden"
