@@ -155,9 +155,21 @@ if (isset($_POST['trip-start']) && isset($_POST['trip-end']) && isset($_POST['pr
                                         </div>
                                     </div>
                                     <div class="mt-3 flex items-center">
-                                        <span class="text-sm font-semibold"></span>&nbsp;<span
-                                                class="font-bold text-xl"><?php echo $room[4] ?></span>&nbsp;<span
-                                                class="text-sm font-semibold">€/nuit</span>
+                                        <span class="font-bold text-xl">
+                                            <?php echo $room[4] ?>
+                                        </span>&nbsp;
+                                        <span class="text-sm font-semibold">
+                                            €/nuit
+                                        </span>
+                                        <span class="ml-3 mr-3">
+                                            |
+                                        </span>
+                                        <span class="font-bold text-xl">
+                                            <?php echo $room[4] * time ?>
+                                        </span>&nbsp;
+                                        <span class="text-sm font-semibold">
+                                            €/<?php echo time ?> jours
+                                        </span>
                                     </div>
                                 </div>
                             </a>
