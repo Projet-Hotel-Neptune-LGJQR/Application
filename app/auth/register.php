@@ -1,5 +1,6 @@
 <?php
 include('../include/header.php');
+include('../include/method.php');
 
 $errors = array();
 
@@ -15,7 +16,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
         $errors[] = "Ce compte existe déjà.";
     } else {
         createAcc(name, email, password_hash(password, PASSWORD_DEFAULT));
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login\">";
+        redirect('auth/login');
     }
 }
 

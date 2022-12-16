@@ -1,5 +1,6 @@
 <?php
 include('../include/header.php');
+include('../include/method.php');
 
 $errors = array();
 
@@ -16,7 +17,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             }
             $_SESSION['email'] = email;
             $_SESSION['success'] = "You are now logged in";
-            echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+            redirect('index');
             return;
         }
         $errors[] = "Mauvais identifiants.";

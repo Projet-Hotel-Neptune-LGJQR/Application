@@ -2,9 +2,11 @@
 include('../../include/header.php');
 include('../../include/admin.php');
 include('../../database/database.php');
+include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
+    die();
 }
 ?>
 
