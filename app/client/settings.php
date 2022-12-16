@@ -1,11 +1,12 @@
 <?php
 include('../include/header.php');
+include('../include/method.php');
 
 $errorsPass = array();
 $errorsMail = array();
 
 if (!isset($_SESSION['email'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+    redirect('index');
 }
 
 include "../database/database.php";
@@ -45,7 +46,7 @@ if (isset($_POST['delete'])) {
     deleteAcc($_SESSION['email'], getAccIdFromEmail($_SESSION['email'])['id']);
     session_destroy();
     unset($_SESSION['email']);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index.php\">";
+    redirect('index');
 }
 ?>
 

@@ -1,8 +1,9 @@
 <?php
 include('./include/header.php');
+include('./include/method.php');
 
 if (!isset($_GET['id'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
+    redirect('reservation');
     die();
 }
 include 'database/database.php';
@@ -10,7 +11,7 @@ include 'database/database.php';
 define('id', $_GET['id']);
 
 if (!isRoomExists(id)) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
+    redirect('reservation');
     die();
 }
 define('room', getRoom(id));
@@ -19,7 +20,7 @@ $price = room['price'];
 if (isset($_GET['time'])) {
     define('time', $_GET['time']);
     if (time <= 0) {
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/reservation\">";
+        redirect('reservation');
         return;
     }
     $price = $price * time;
@@ -28,13 +29,13 @@ if (isset($_GET['time'])) {
 
 if (isset($_GET['res'])) {
     if (!isset($_SESSION['email'])) {
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/auth/login\">";
+        redirect('auth/login');
         die();
     }
 
     define('resId', $_GET['res']);
     createReservation(getAccIdFromEmail($_SESSION['email'])['id'], resId);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index\">";
+    redirect('client/index');
 }
 ?>
 

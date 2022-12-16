@@ -1,8 +1,9 @@
 <?php
 include('../include/header.php');
+include('../include/method.php');
 
 if (!isset($_SESSION['email'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
 }
 
 include '../database/database.php';
@@ -18,7 +19,7 @@ foreach (reservations as $res) {
 if (isset($_GET['del'])) {
     define('resId', $_GET['del']);
     deleteReservation(resId);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/client/index\">";
+    redirect('client/index');
 }
 
 ?>

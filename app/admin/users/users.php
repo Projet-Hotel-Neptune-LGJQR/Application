@@ -1,9 +1,10 @@
 <?php
 include('../../include/header.php');
 include('../../include/admin.php');
+include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
 }
 
 include "../../database/database.php";
@@ -13,8 +14,7 @@ define('users', getAccs());
 function delUser($email)
 {
     deleteAcc($email, getAccIdFromEmail($email)['id']);
-
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/users\">";
+    redirect('admin/users/users');
 }
 
 if (isset($_GET['del'])) {

@@ -2,14 +2,15 @@
 include('../../include/header.php');
 include('../../include/admin.php');
 include('../../database/database.php');
+include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
     die();
 }
 
 if (!isset($_GET['id'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms\">";
+    redirect('admin/room/rooms');
     die();
 }
 
@@ -19,7 +20,7 @@ define('room', getRoom($_GET['id']));
 
 if (isset($_GET['del'])) {
     deleteRoom($_GET['del']);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms\">";
+    redirect('admin/room/rooms');
 }
 
 $room_name = room['name'];
@@ -64,7 +65,7 @@ if (isset($_POST['submit'])) {
     }
 
     updateRoom($room_name, $room_star, $room_rating, $room_price, $room_firstImage, $room_description, room['id']);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms\">";
+    redirect('admin/room/rooms');
 }
 ?>
 

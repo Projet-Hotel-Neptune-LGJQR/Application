@@ -2,13 +2,14 @@
 include('../../include/header.php');
 include('../../include/admin.php');
 include('../../database/database.php');
+include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
 }
 
 if (!isset($_GET['user'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/users\">";
+    redirect('admin/users/users');
     die();
 }
 
@@ -31,7 +32,7 @@ if (isset($_POST['submit'])) {
     }
 
     updateAcc($name, $email, $password, user[0]);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/users\">";
+    redirect('admin/users/users');
 }
 
 define('reservations', getReservation(getAccIdFromEmail($email)['id']));
@@ -47,7 +48,7 @@ foreach (reservations as $res) {
 if (isset($_GET['del'])) {
     define('resId', $_GET['del']);
     deleteReservation(resId);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/users/manageUsers?user=$email\">";
+    redirect("admin/users/manageUsers?user=$email");
 }
 ?>
 

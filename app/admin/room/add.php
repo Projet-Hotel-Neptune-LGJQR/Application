@@ -1,9 +1,10 @@
 <?php
 include('../../include/header.php');
 include('../../include/admin.php');
+include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=/index\">";
+    redirect('index');
 }
 $errors = array();
 include "../../database/database.php";
@@ -30,7 +31,7 @@ if (isset($_POST['room-name']) && isset($_POST['room-star'])
 
     if (move_uploaded_file(room_firstimage['tmp_name'], $path)) {
         createRooms(room_name, room_star, room_rating, room_price, 'admin/room/' . $path, room_description);
-        echo "<meta http-equiv=\"refresh\" content=\"0;URL=/admin/room/rooms\">";
+        redirect('admin/room/rooms');
     }
 }
 
