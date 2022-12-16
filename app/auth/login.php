@@ -18,7 +18,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['email'] = email;
             $_SESSION['success'] = "You are now logged in";
             redirect('index');
-            return;
+            die();
         }
         $errors[] = "Mauvais identifiants.";
     } else {

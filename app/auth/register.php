@@ -17,6 +17,7 @@ if (isset($_POST['full-name']) && isset($_POST['email']) && isset($_POST['passwo
     } else {
         createAcc(name, email, password_hash(password, PASSWORD_DEFAULT));
         redirect('auth/login');
+        die();
     }
 }
 
