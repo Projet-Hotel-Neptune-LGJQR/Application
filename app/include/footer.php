@@ -1,6 +1,6 @@
 <footer class="text-center text-white pt-12">
     <div class="container pt-9">
-        <div class="flex justify-center mb-9">
+        <div class="flex justify-center ali mb-9">
             <a href="#!" class="mr-9 text-gray-800">
                 <svg
                         aria-hidden="true"

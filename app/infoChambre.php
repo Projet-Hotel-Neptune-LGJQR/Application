@@ -51,7 +51,7 @@ if (isset($_GET['res'])) {
                         </p>
 
                         <div class=" flex items-center font-heading">
-                            {{this.offer.location}}
+                            Montpellier, France
                         </div>
                     </div>
 
