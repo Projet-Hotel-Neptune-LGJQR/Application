@@ -4,6 +4,7 @@ include('../include/method.php');
 
 if (!isset($_SESSION['email'])) {
     redirect('index');
+    die();
 }
 
 include '../database/database.php';
@@ -20,6 +21,7 @@ if (isset($_GET['del'])) {
     define('resId', $_GET['del']);
     deleteReservation(resId);
     redirect('client/index');
+    die();
 }
 
 ?>

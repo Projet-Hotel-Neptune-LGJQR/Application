@@ -6,6 +6,7 @@ include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
     redirect('index');
+    die();
 }
 
 if (!isset($_GET['user'])) {
@@ -49,6 +50,7 @@ if (isset($_GET['del'])) {
     define('resId', $_GET['del']);
     deleteReservation(resId);
     redirect("admin/users/manageUsers?user=$email");
+    die();
 }
 ?>
 

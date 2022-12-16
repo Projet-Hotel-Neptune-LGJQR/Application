@@ -7,6 +7,7 @@ $errorsMail = array();
 
 if (!isset($_SESSION['email'])) {
     redirect('index');
+    die();
 }
 
 include "../database/database.php";
@@ -47,6 +48,7 @@ if (isset($_POST['delete'])) {
     session_destroy();
     unset($_SESSION['email']);
     redirect('index');
+    die();
 }
 ?>
 

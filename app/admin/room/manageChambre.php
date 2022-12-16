@@ -21,6 +21,7 @@ define('room', getRoom($_GET['id']));
 if (isset($_GET['del'])) {
     deleteRoom($_GET['del']);
     redirect('admin/room/rooms');
+    die();
 }
 
 $room_name = room['name'];

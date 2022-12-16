@@ -15,6 +15,7 @@ function delUser($email)
 {
     deleteAcc($email, getAccIdFromEmail($email)['id']);
     redirect('admin/users/users');
+    die();
 }
 
 if (isset($_GET['del'])) {

@@ -6,6 +6,7 @@ include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
     redirect('index');
+    die();
 }
 ?>
 

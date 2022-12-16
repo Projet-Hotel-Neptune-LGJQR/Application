@@ -5,7 +5,9 @@ include('../../include/method.php');
 
 if (!isset($_SESSION['admin'])) {
     redirect('index');
+    die();
 }
+
 $errors = array();
 include "../../database/database.php";
 
